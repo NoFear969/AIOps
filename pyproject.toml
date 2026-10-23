@@ -1,0 +1,30 @@
+[project]
+name = "logagg"
+version = "0.1.0"
+description = "日志报错近实时归集：SFTP 增量拉取 → 解析指纹 → Analyzer → MySQL → 内部邮件"
+readme = "README.md"
+authors = [
+    { name = "Ruth Hayes", email = "dorcashilllnfkhc@outlook.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "paramiko>=5.1.0",
+    "pymysql>=1.2.3",
+    "python-dotenv>=1.2.4",
+]
+
+[project.scripts]
+logagg-poll = "logagg.poll:main"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

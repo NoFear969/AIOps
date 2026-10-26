@@ -1,0 +1,22 @@
+2026-10-22 07:00:01.001 INFO  com.example.App - started
+2026-10-22 07:01:12.100 ERROR com.example.pay.ChargeService - upstream timed out after 5000ms
+java.util.concurrent.TimeoutException: upstream timed out after 5000ms
+	at com.example.pay.ChargeService.charge(ChargeService.java:88)
+	at com.example.pay.ChargeService.charge(ChargeService.java:60)
+	at com.example.checkout.CheckoutController.pay(CheckoutController.java:41)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at com.example.pay.GatewayClient.call(GatewayClient.java:120)
+2026-10-22 07:01:13.000 INFO  com.example.App - continue
+2026-10-22 07:02:00.200 ERROR com.example.pay.ChargeService - upstream timed out after 5000ms
+java.util.concurrent.TimeoutException: upstream timed out after 5000ms
+	at com.example.pay.ChargeService.charge(ChargeService.java:88)
+	at com.example.pay.ChargeService.charge(ChargeService.java:60)
+	at com.example.checkout.CheckoutController.pay(CheckoutController.java:41)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at com.example.pay.GatewayClient.call(GatewayClient.java:120)
+2026-10-22 07:03:00.000 ERROR com.example.order.OrderService - NullPointerException on item
+java.lang.NullPointerException: Cannot invoke getId() because item is null
+	at com.example.order.OrderService.price(OrderService.java:22)
+	at com.example.order.OrderService.submit(OrderService.java:10)
